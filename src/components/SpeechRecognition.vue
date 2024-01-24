@@ -1,7 +1,10 @@
 <script setup>
-import { ref } from 'vue'
+import { VueElement, ref } from 'vue'
+import './SpeechRecognition.css'
+
 
 const strToRead = "the test"
+let isRecording = ref(false)
 
 window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition;
     let finalTranscript = '';
@@ -23,11 +26,11 @@ window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecogn
       }
 
       checkString(interimTranscript)
-      document.querySelector('body').innerHTML = finalTranscript + '<i>' + interimTranscript + '</i>';
+      document.getElementById('text-output').innerHTML = finalTranscript + '<p>' + interimTranscript + '</p>';
         
       
     }
-    recognition.start();
+  
 
     const checkString = (text) => {
         console.log(text)
@@ -40,13 +43,32 @@ window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecogn
     }
   
 
+    const clickToSpeak = () => {
+        console.log('recording')
+        isRecording.value = true
+        recognition.start();
+    }
+
+    const stopToSpeak = () => {
+        console.log('recording stopped')
+        isRecording.value = false
+        recognition.abort()
+    }
+     
 
 </script>
 
 <template>
-    <body>
-        Speech Recognition
-
-    </body>
+    <div class="container">
+        <section class="title">
+            Read
+        </section>
+        <section class="text-to-read">
+            {{ strToRead }}
+        </section>
+        <div id="text-output"></div>
+    </div>
+     <button v-if="isRecording" class="mic-btn-stop" @click="stopToSpeak"><font-awesome-icon icon="fa-solid fa-microphone" /></button> 
+    <button v-if="!isRecording" class="mic-btn-start" @click="clickToSpeak"><font-awesome-icon icon="fa-solid fa-microphone" /></button>
     
 </template>

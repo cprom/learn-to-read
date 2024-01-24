@@ -58,6 +58,10 @@ button:focus-visible {
   padding: 2em;
 }
 
+.text-output {
+  border: 1px solid red;
+}
+
 #app {
   max-width: 1280px;
   margin: 0 auto;
