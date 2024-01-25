@@ -64,15 +64,13 @@ window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecogn
 </script>
 
 <template>
+        
+    <div class="container">
         <div class="reading-array">
             <template v-for="word in strToReadArr">
-            <span class="text-btn" @click="readText(word)">{{ word }}</span>
-        </template>
+                <span class="text-btn" @click="readText(word)">{{ word }}</span>
+            </template>
         </div>
-    <div class="container">
-        <nav class="nav">
-           
-        </nav>
         <div id="text-output"></div>
         <div class="mic-btn">
             <button v-if="isRecording" class="mic-btn-stop" @click="stopToSpeak"><font-awesome-icon icon="fa-solid fa-microphone" /></button> 
@@ -80,6 +78,5 @@ window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecogn
         </div>
         
     </div>
-
     
 </template>

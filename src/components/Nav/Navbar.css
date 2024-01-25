@@ -5,7 +5,7 @@
   justify-content: space-evenly;
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 15px;
     font-family: 'Architects Daughter';
     width: 100vw;
 }
@@ -20,13 +20,18 @@ button{
 }
 
 .home-icon {
-
   margin-top: 25px;
+
 }
 
-.setting-icon {
 
-  margin-top: 25px;
+.setting-icon {
+  margin-top: 30px;
+}
+
+.setting-icon:hover {
+  transform: rotate(1080deg);
+  transition: 10s;
 }
 .reading {
     border: 20px solid #63E6BE; 
