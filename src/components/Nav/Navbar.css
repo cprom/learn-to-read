@@ -20,8 +20,23 @@ button{
 }
 
 .home-icon {
-  margin-top: 25px;
+  margin-top: 10px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
 
+.home-icon:hover {
+  color: rgb(99, 230, 191);
+  width: 80px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgb(99, 230, 191);
+ transform: scale(1);
+ animation: pulse-home-icon 1.5s infinite;
+}
+
+.lightbulb-icon {
+  margin-top: 25px;
 }
 
 
@@ -138,3 +153,21 @@ button{
       background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
     }
   }
+
+  @keyframes pulse-home-icon {
+    0% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(99, 230, 191, 0.7);
+    }
+  
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 10px rgba(99, 230, 191, 0);
+    }
+  
+    100% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(99, 230, 191, 0);
+    }
+  }
+  

@@ -2,7 +2,20 @@
 import { ref } from 'vue'
 import '../assets/read.css'
 
-const strToRead = "Bella and Kaylie ran up the hill. This is a test for a sentence."
+const strToRead = "Bella and Kaylie ran up the hill."
+
+ const strToReadObj = [
+    {
+     text: "Bella and Kaylie ran up the hilll",
+     img_url: "../assets/gif/run_up_hill.gif"
+ },
+    {
+        text: "They walked back down to the lake",
+        img_url: "../assets/gif/run_up_hill.gif"
+
+    }
+]
+
 let strToReadArr = strToRead.split(' ')
 let isRecording = ref(false)
 
@@ -30,18 +43,7 @@ window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecogn
         
       
     }
-  
-
-    const checkString = (text) => {
-        console.log(text)
-        console.log(strToRead)
-        if(strToRead == text){
-            console.log("string is the same")
-        }else{
-            console.log("sting is different")
-        }
-    }
-  
+    
 
     const clickToSpeak = () => {
         console.log('recording')
@@ -66,6 +68,9 @@ window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecogn
 <template>
         
     <div class="container">
+        <div class="gif">
+            <img src="../assets/gif/run_up_hill.gif"/>
+        </div>
         <div class="reading-array">
             <template v-for="word in strToReadArr">
                 <span class="text-btn" @click="readText(word)">{{ word }}</span>
