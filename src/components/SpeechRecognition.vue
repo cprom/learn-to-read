@@ -1,9 +1,9 @@
 <script setup>
-import { VueElement, ref } from 'vue'
+import { ref } from 'vue'
 import './SpeechRecognition.css'
+import Navbar from './Nav/Navbar.vue';
 
-
-const strToRead = "the test"
+const strToRead = "Bella and Kaylie ran up the hill."
 let isRecording = ref(false)
 
 window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition;
@@ -60,15 +60,17 @@ window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecogn
 
 <template>
     <div class="container">
-        <section class="title">
-            Read
-        </section>
+        <nav class="nav">
+            <Navbar/>
+        </nav>
         <section class="text-to-read">
             {{ strToRead }}
         </section>
         <div id="text-output"></div>
+        <div class="mic-btn">
+            <button v-if="isRecording" class="mic-btn-stop" @click="stopToSpeak"><font-awesome-icon icon="fa-solid fa-microphone" /></button> 
+            <button v-if="!isRecording" class="mic-btn-start" @click="clickToSpeak"><font-awesome-icon icon="fa-solid fa-microphone" /></button>
+        </div>
     </div>
-     <button v-if="isRecording" class="mic-btn-stop" @click="stopToSpeak"><font-awesome-icon icon="fa-solid fa-microphone" /></button> 
-    <button v-if="!isRecording" class="mic-btn-start" @click="clickToSpeak"><font-awesome-icon icon="fa-solid fa-microphone" /></button>
     
 </template>
