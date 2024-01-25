@@ -2,7 +2,8 @@
 import { ref } from 'vue'
 import '../assets/read.css'
 
-const strToRead = "Bella and Kaylie ran up the hill."
+const strToRead = "Bella and Kaylie ran up the hill. This is a test for a sentence."
+let strToReadArr = strToRead.split(' ')
 let isRecording = ref(false)
 
 window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition;
@@ -55,22 +56,30 @@ window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecogn
         recognition.abort()
     }
      
+    const readText = (word) => {
+        let utterance = new SpeechSynthesisUtterance(word);
+        speechSynthesis.speak(utterance);
+    }
 
 </script>
 
 <template>
+        <div class="reading-array">
+            <template v-for="word in strToReadArr">
+            <span class="text-btn" @click="readText(word)">{{ word }}</span>
+        </template>
+        </div>
     <div class="container">
         <nav class="nav">
            
         </nav>
-        <section class="text-to-read">
-            {{ strToRead }}
-        </section>
         <div id="text-output"></div>
         <div class="mic-btn">
             <button v-if="isRecording" class="mic-btn-stop" @click="stopToSpeak"><font-awesome-icon icon="fa-solid fa-microphone" /></button> 
             <button v-if="!isRecording" class="mic-btn-start" @click="clickToSpeak"><font-awesome-icon icon="fa-solid fa-microphone" /></button>
         </div>
+        
     </div>
+
     
 </template>
