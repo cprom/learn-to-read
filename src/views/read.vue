@@ -1,7 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import './SpeechRecognition.css'
-import Navbar from './Nav/Navbar.vue';
+import '../assets/read.css'
 
 const strToRead = "Bella and Kaylie ran up the hill."
 let isRecording = ref(false)
@@ -62,7 +61,7 @@ window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecogn
 <template>
     <div class="container">
         <nav class="nav">
-            <Navbar/>
+           
         </nav>
         <section class="text-to-read">
             {{ strToRead }}
