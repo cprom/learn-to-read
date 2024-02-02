@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router";
 import read from '../views/read.vue'
 import home from '../views/home.vue'
 import math from '../views/math.vue'
@@ -8,7 +8,7 @@ import settings from '../views/settings.vue'
 
 const routes = [
     {
-        path: `/learn-to-read/home`,
+        path: `/learn-to-read`,
         name: home,
         component: home,
     },
@@ -37,8 +37,7 @@ const routes = [
 ]
 
 const router = createRouter({
-    mode: 'hash',
-    history: createWebHistory(),
+    history: createWebHashHistory(),
     routes
 })
 

@@ -4,7 +4,7 @@ import './Navbar.css'
 
 <template>
    <nav class="nav-container">
-        <router-link class="home-icon" to="/learn-to-read/home"><font-awesome-icon class="lightbulb-icon" icon="fa-solid fa-lightbulb" size="2xl" style="color: #63E6BE;" /><font-awesome-icon class="brain-icon" icon="fa-solid fa-brain" size="2xl" style="color: #FFD43B ;" /></router-link>
+        <router-link class="home-icon" to="/learn-to-read"><font-awesome-icon class="lightbulb-icon" icon="fa-solid fa-lightbulb" size="2xl" style="color: #63E6BE;" /><font-awesome-icon class="brain-icon" icon="fa-solid fa-brain" size="2xl" style="color: #FFD43B ;" /></router-link>
          <div>
             <button class="reading button"><router-link to="/learn-to-read/read"><font-awesome-icon icon="fa-solid fa-book" size="xl" style="color: #63E6BE;" /> Reading</router-link></button>
             <button class="writing button"><router-link to="/learn-to-read/write"><font-awesome-icon icon="fa-solid fa-pen" size="xl" style="color: #B197FC;" /> Writing</router-link></button>
