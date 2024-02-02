@@ -2,12 +2,12 @@
 import { ref } from 'vue'
 import '../assets/read.css'
 
-const strToRead = "Bella and Kaylie ran up the hill."
+const strToRead = "test"
 
  const strToReadObj = [
     {
-     text: "Bella and Kaylie ran up the hilll",
-     img_url: "../assets/gif/run_up_hill.gif"
+        text: "Bella and Kaylie ran up the hilll",
+        img_url: "../assets/gif/run_up_hill.gif"
  },
     {
         text: "They walked back down to the lake",
@@ -38,12 +38,28 @@ window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecogn
         }
       }
 
-      checkString(interimTranscript)
+      checkStringIsTheSame(interimTranscript)
       document.getElementById('text-output').innerHTML = finalTranscript + '<p>' + interimTranscript + '</p>';
         
       
     }
     
+
+    const checkStringIsTheSame = (text) => {
+        console.log(text)
+        let interimTranscriptArr = text.toLowerCase().split(' ');
+        console.log(interimTranscriptArr)
+
+        console.log(strToRead)
+        let strToReadArr = strToRead.toLocaleLowerCase().split(' ')
+        console.log(strToReadArr)
+        if(strToReadArr[0] == interimTranscriptArr[0]){
+            console.log("string is the same")
+            console.log(strToRead[0])
+        }else{
+            console.log("sting is different")
+        }
+    }
 
     const clickToSpeak = () => {
         console.log('recording')

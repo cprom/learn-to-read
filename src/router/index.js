@@ -10,28 +10,33 @@ const routes = [
     {
         path: `/learn-to-read/home`,
         name: home,
-        component: home
+        component: home,
+        mode: 'hash'
     },
     
     {
         path: '/learn-to-read/read',
         name: read,
-        component: read
+        component: read,
+        mode: 'hash'
     },
     {
         path: '/learn-to-read/write',
         name: write,
-        component: write
+        component: write,
+        mode: 'hash'
     },
     {
         path: '/learn-to-read/math',
         name: math,
-        component: math
+        component: math,
+        mode: 'hash'
     },
     {
         path: '/learn-to-read/settings',
         name: settings,
-        component: settings
+        component: settings,
+        mode: 'hash'
     },
 
 ]
