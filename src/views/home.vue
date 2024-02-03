@@ -2,16 +2,14 @@
 </script>
 
 <template>
-    <div>Home</div>
     <div class="container">
         <nav class="nav">
-           
         </nav>
+        <button >Home</button> 
         <section class="text-to-read">
         </section>
         <div id="text-output"></div>
         <div class="mic-btn">
-            <button >Home</button> 
         </div>
     </div>
     

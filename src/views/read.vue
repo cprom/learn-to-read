@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import '../assets/read.css'
 
-const strToRead = "test"
+const strToRead = "test doll"
 
  const strToReadObj = [
     {
@@ -53,12 +53,19 @@ window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecogn
         console.log(strToRead)
         let strToReadArr = strToRead.toLocaleLowerCase().split(' ')
         console.log(strToReadArr)
-        if(strToReadArr[0] == interimTranscriptArr[0]){
+        for(let i = 0; i < interimTranscriptArr.length; i++){
+            for (let j = 0; j < strToReadArr.length; j++){
+                if(strToReadArr[j] == interimTranscriptArr[i]){
             console.log("string is the same")
-            console.log(strToRead[0])
+            console.log(strToRead[j])
+            return true
         }else{
             console.log("sting is different")
+            return false
         }
+            }
+        }
+     
     }
 
     const clickToSpeak = () => {

@@ -8,28 +8,28 @@ import settings from '../views/settings.vue'
 
 const routes = [
     {
-        path: `/learn-to-read`,
+        path: `/`,
         name: home,
         component: home,
     },
     
     {
-        path: '/learn-to-read/read',
+        path: '/read',
         name: read,
         component: read,
     },
     {
-        path: '/learn-to-read/write',
+        path: '/write',
         name: write,
         component: write,
     },
     {
-        path: '/learn-to-read/math',
+        path: '/math',
         name: math,
         component: math,
     },
     {
-        path: '/learn-to-read/settings',
+        path: '/settings',
         name: settings,
         component: settings,
     },

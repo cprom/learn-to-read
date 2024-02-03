@@ -55,7 +55,6 @@ border: 1px solid rgba(177, 151, 252, 0.45);
 }
 
 .mic-btn {
-    
 	position: absolute;
 	top: 60%;
 	left: 50%;
@@ -89,6 +88,13 @@ img {
 	border-radius: 10px;
 }
 
+.correct-word {
+	color: rgb(0, 255, 0);
+}
+
+.wrong-word {
+	color: red;
+}
 
 @keyframes pulse {
 	0% {
