@@ -1,17 +1,24 @@
 <script setup>
 import { ref } from 'vue'
+import 'vue3-carousel/dist/carousel.css'
+import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
+import Card from 'primevue/card';
+import Button from 'primevue/button';
 import '../assets/read.css'
+
 
 const strToRead = "test doll"
 
  const strToReadObj = [
+    {   
+        id: 1,
+        text: "Bella and Kaylie ran up the hill.Bella and Kaylie ran up the hill.Bella and Kaylie ran up the hill.Bella and Kaylie ran up the hill.Bella and Kaylie ran up the hill.  ",
+        img_url: "src/assets/gif/run_up_hill.gif"
+    },
     {
-        text: "Bella and Kaylie ran up the hilll",
-        img_url: "../assets/gif/run_up_hill.gif"
- },
-    {
-        text: "They walked back down to the lake",
-        img_url: "../assets/gif/run_up_hill.gif"
+        id: 2,
+        text: "They walked back down to the lake.",
+        img_url: "https://picsum.photos/300/200?q=2" 
 
     }
 ]
@@ -89,22 +96,37 @@ window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecogn
 </script>
 
 <template>
-        
-    <div class="container">
-        <div class="gif">
-            <img src="../assets/gif/run_up_hill.gif"/>
-        </div>
-        <div class="reading-array">
-            <template v-for="word in strToReadArr">
-                <span class="text-btn" @click="readText(word)">{{ word }}</span>
-            </template>
-        </div>
-        <div id="text-output"></div>
-        <div class="mic-btn">
-            <button v-if="isRecording" class="mic-btn-stop" @click="stopToSpeak"><font-awesome-icon icon="fa-solid fa-microphone" /></button> 
-            <button v-if="!isRecording" class="mic-btn-start" @click="clickToSpeak"><font-awesome-icon icon="fa-solid fa-microphone" /></button>
-        </div>
-        
-    </div>
+ <div class="container">
+    <Carousel >
+    <Slide v-for="(slide, index) in strToReadObj" :key="slide.id">
+   <div class="card">
+    <Card style="max-width: 700px; overflow: hidden; word-wrap: inherit;">
+        <template #header>
+            {{ console.log(slide.img_url) }}
+            <img alt="user header" :src='slide.img_url' />
+        </template>
+        <template #content>
+            <div class="sentence">
+                <span v-for="word in slide.text.split(' ')">
+                    <span class="text-btn" @click="readText(word)">{{ word }}</span>
+                </span>      
+            </div>
+        </template>
+        <template #footer>
+            <div class="flex gap-3 mt-1 record-btn">
+                <Button v-if="isRecording" class="mic-btn-stop" @click="stopToSpeak"><font-awesome-icon icon="fa-solid fa-microphone" /></Button> 
+                <Button v-if="!isRecording" class="mic-btn-start" @click="clickToSpeak"><font-awesome-icon icon="fa-solid fa-microphone" /></Button>
+            </div>
+        </template>
+    </Card>
     
+   </div>
+</Slide>
+
+<template #addons>
+  <Navigation />
+  <Pagination />
+</template>
+</Carousel>
+</div>
 </template>

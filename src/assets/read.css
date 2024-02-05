@@ -1,17 +1,8 @@
 
-.text-to-read {
-    font-size: 23px;
-    font-weight: bolder;
-}
 
 .container {
-width: 90vw;
-height: 90vh;
-position: absolute;
-top: 60%;
-left: 50%;
-transform: translate(-50%, -50%);
-
+height: 80vh;
+margin-top: 30px;
 /* From https://css.glass */
 background: rgba(177, 151, 252, 0.79);
 border-radius: 16px;
@@ -21,15 +12,34 @@ backdrop-filter: blur(4.6px);
 border: 1px solid rgba(177, 151, 252, 0.45);
 }
 
-.text-to-read { 
-    font-size: 40px;
+
+.sentence {
+display: flex;
+flex-direction: row;
+margin-top: 50px;
+margin-bottom: 50px;
+flex-wrap: wrap;
+padding-left: 35px;
+padding-right: 20px;
+text-align: center;
+}
+
+.card {
+min-width: 600px;
+max-width: 600px;
+border-radius: 10px;
+background-color: white;
+margin: auto;
+-webkit-box-shadow: 0px 0px 15px 0px rgba(124,41,232,0.75);
+-moz-box-shadow: 0px 0px 15px 0px rgba(124,41,232,0.75);
+box-shadow: 0px 0px 15px 0px rgba(124,41,232,0.75);
 }
 
 .text-btn {
 	margin: auto;
 	padding: 0;
 	margin-right: 8px;
-	font-size: 40px;
+	font-size: 25px;
 }
 
 .text-btn:hover {
@@ -56,7 +66,7 @@ border: 1px solid rgba(177, 151, 252, 0.45);
 
 .mic-btn {
 	position: absolute;
-	top: 60%;
+	top: 90%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
@@ -96,6 +106,9 @@ img {
 	color: red;
 }
 
+.record-btn {
+	margin-top: 20px;
+}
 @keyframes pulse {
 	0% {
 		transform: scale(0.95);

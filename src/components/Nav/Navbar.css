@@ -4,10 +4,8 @@
   display: flex;
   justify-content: space-evenly;
     list-style-type: none;
-    margin: 0;
-    padding: 15px;
     font-family: 'Architects Daughter';
-    width: 100vw;
+
 }
 
 button{
