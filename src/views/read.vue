@@ -13,7 +13,7 @@ const strToRead = "test doll"
     {   
         id: 1,
         text: "Bella and Kaylie ran up the hill.",
-        img_url: "~src/assets/gif/run_up_hill.gif"
+        img_url: "src/assets/gif/run_up_hill.gif"
     },
     {
         id: 2,
@@ -128,7 +128,7 @@ window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecogn
         <template #header>
             {{ console.log(slide.img_url) }}
             <div class="img">
-                <img alt="user header" :src='slide.img_url' />
+                <img alt="user header" :src='require(slide.img_url)' />
             </div>
         </template>
         <template #content>
