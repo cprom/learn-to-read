@@ -18,9 +18,33 @@ const strToRead = "test doll"
     {
         id: 2,
         text: "They walked back down to the lake.",
+        img_url: "src/assets/gif/run_up_hill.gif" 
+
+    },
+    {
+        id: 3,
+        text: "They walked back down to the lake.",
         img_url: "https://picsum.photos/300/200?q=2" 
 
-    }
+    },
+    {
+        id: 4,
+        text: "They walked back down to the lake.",
+        img_url: "https://picsum.photos/300/200?q=2" 
+
+    },
+    {
+        id: 5,
+        text: "They walked back down to the lake.",
+        img_url: "https://picsum.photos/300/200?q=2" 
+
+    },
+    {
+        id: 6,
+        text: "They walked back down to the lake.",
+        img_url: "https://picsum.photos/300/200?q=2" 
+
+    },
 ]
 
 let strToReadArr = strToRead.split(' ')
@@ -103,7 +127,9 @@ window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecogn
     <Card style="max-width: 700px; overflow: hidden; word-wrap: inherit;">
         <template #header>
             {{ console.log(slide.img_url) }}
-            <img alt="user header" :src='slide.img_url' />
+            <div class="img">
+                <img alt="user header" :src='slide.img_url' />
+            </div>
         </template>
         <template #content>
             <div class="sentence">
@@ -124,7 +150,8 @@ window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecogn
 </Slide>
 
 <template #addons>
-  <Navigation />
+  <Navigation > 
+    </Navigation>
   <Pagination />
 </template>
 </Carousel>

@@ -26,6 +26,7 @@ body {
   max-width: max-content;
   margin: auto;
   }
+
   
 h1 {
   font-size: 3.2em;
@@ -73,3 +74,5 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+

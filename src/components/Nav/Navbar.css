@@ -169,3 +169,84 @@ button{
     }
   }
   
+  @media screen and (max-width: 430px) {
+    .nav-container {
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+    
+    }
+
+    .nav-btns {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .lightbulb-icon {
+      margin-top: 30px;
+      font-size: 15px;
+    }
+
+    .brain-icon {
+      font-size: 15px
+    }
+
+    .setting-icon {
+      font-size: 20px;
+      margin-right: 7px;
+    }
+
+    .setting-icon-container {
+      width: 80px;
+      height: 80px;
+    }
+
+    .reading,.writing, .math {
+      display: flex;
+      justify-content: space-around;
+      font-size: 10px;
+      text-align: center;
+      width: 50px;
+      height: 50px;
+    }
+    }
+    
+    @media screen and (max-width: 768px) {
+      .nav-container {
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+      
+      }
+      
+      .nav-btns {
+        display: flex;
+        justify-content: space-between;
+      }
+  
+      .home-icon {
+        margin: 0;
+        font-size: 10px;
+        margin-left: 10px;
+      }
+  
+      .setting-icon {
+        font-size: 20px;
+        margin-right: 7px;
+      }
+  
+      .setting-icon-container {
+        width: 80px;
+        height: 80px;
+      }
+  
+      .reading,.writing, .math {
+        display: flex;
+        justify-content: space-around;
+        font-size: 13px;
+        text-align: center;
+        width: 100px;
+        height: 50px;
+      }
+
+    }
