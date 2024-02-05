@@ -12,13 +12,13 @@ const strToRead = "test doll"
  const strToReadObj = [
     {   
         id: 1,
-        text: "Bella and Kaylie ran up the hill.Bella and Kaylie ran up the hill.Bella and Kaylie ran up the hill.Bella and Kaylie ran up the hill.Bella and Kaylie ran up the hill.  ",
-        img_url: "src/assets/gif/run_up_hill.gif"
+        text: "Bella and Kaylie ran up the hill.",
+        img_url: "./src/assets/gif/run_up_hill.gif"
     },
     {
         id: 2,
         text: "They walked back down to the lake.",
-        img_url: "src/assets/gif/run_up_hill.gif" 
+        img_url: "./src/assets/gif/run_up_hill.gif" 
 
     },
     {

@@ -60,6 +60,7 @@ background-color: white;
 	padding: 0;
 	margin-right: 8px;
 	font-size: 25px;
+	color: black;
 }
 
 .text-btn:hover {
@@ -171,7 +172,7 @@ img {
 	}
 
 	.text-btn {
-		font-size: 14px;
+		font-size: 25px;
 	}
 
 	.carousel__prev,
@@ -197,7 +198,7 @@ img {
 	  }
   
 	  .text-btn {
-		  font-size: 14px;
+		  font-size: 25px;
 	  }
   
 	  .carousel__prev,
