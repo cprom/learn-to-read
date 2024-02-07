@@ -12,39 +12,22 @@ const strToRead = "test doll"
  const strToReadObj = [
     {   
         id: 1,
-        text: "Bella and Kaylie ran up the hill.",
-        img_url: "public/run_up_hill.gif"
+        text: "The two sister ran up the hill.",
+        img_url: "run_up_hill.gif"
     },
     {
         id: 2,
         text: "They walked back down to the lake.",
-        img_url: "src/assets/gif/run_up_hill.gif" 
+        img_url: "assets/gif/run_up_hill.gif" 
 
     },
     {
         id: 3,
-        text: "They walked back down to the lake.",
+        text: "When the sisters got to the lake they decided to go for a swim.",
         img_url: "https://picsum.photos/300/200?q=2" 
 
     },
-    {
-        id: 4,
-        text: "They walked back down to the lake.",
-        img_url: "https://picsum.photos/300/200?q=2" 
-
-    },
-    {
-        id: 5,
-        text: "They walked back down to the lake.",
-        img_url: "https://picsum.photos/300/200?q=2" 
-
-    },
-    {
-        id: 6,
-        text: "They walked back down to the lake.",
-        img_url: "https://picsum.photos/300/200?q=2" 
-
-    },
+   
 ]
 
 let strToReadArr = strToRead.split(' ')
