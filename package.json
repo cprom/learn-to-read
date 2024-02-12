@@ -11,6 +11,7 @@
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/vue-fontawesome": "^3.0.5",
+    "@vueuse/firebase": "^10.7.2",
     "buefy": "^0.9.27",
     "firebase": "^10.8.0",
     "primevue": "^3.47.2",
