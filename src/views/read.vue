@@ -12,20 +12,24 @@ const strToRead = "test doll"
  const strToReadObj = [
     {   
         id: 1,
-        text: "The two sister ran up the hill.",
-        img_url: "run_up_hill.gif"
+        data: "Bella and Kay ran up the hill.",
+        img_url: "run_up_hill.gif",
+        level: 3,
+        category: "reading"
     },
     {
         id: 2,
-        text: "They walked back down to the lake.",
-        img_url: "assets/gif/run_up_hill.gif" 
-
+        data: "They walked back down to the lake.",
+        img_url: "run_up_hill.gif", 
+        level: 3,
+        category: "reading"
     },
     {
         id: 3,
-        text: "When the sisters got to the lake they decided to go for a swim.",
-        img_url: "https://picsum.photos/300/200?q=2" 
-
+        data: "The sisters are playing near the lake.",
+        img_url: "https://picsum.photos/300/200?q=2",
+        level: 1, 
+        category: "reading"
     },
    
 ]
@@ -105,28 +109,32 @@ window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecogn
 <template>
  <div class="container">
     <Carousel >
-    <Slide v-for="(slide, index) in strToReadObj" :key="slide.id">
-   <div class="card">
-    <Card style="max-width: 700px; overflow: hidden; word-wrap: inherit;">
-        <template #header>
-            {{ console.log(slide.img_url) }}
-            <div class="img">
-                <img alt="user header" :src="slide.img_url"/>
-            </div>
-        </template>
-        <template #content>
-            <div class="sentence">
-                <span v-for="word in slide.text.split(' ')">
-                    <span class="text-btn" @click="readText(word)">{{ word }}</span>
-                </span>      
-            </div>
-        </template>
-        <template #footer>
-            <div class="flex gap-3 mt-1 record-btn">
-                <Button v-if="isRecording" class="mic-btn-stop" @click="stopToSpeak"><font-awesome-icon icon="fa-solid fa-microphone" /></Button> 
-                <Button v-if="!isRecording" class="mic-btn-start" @click="clickToSpeak"><font-awesome-icon icon="fa-solid fa-microphone" /></Button>
-            </div>
-        </template>
+        <Slide v-for="(slide, index) in strToReadObj" :key="slide.id">
+            <div class="card">
+                <Card style="max-width: 700px; overflow: hidden; word-wrap: inherit;">
+                    <template #header>
+                        {{ console.log(slide.img_url) }}
+                        <div class="img">
+                            <img alt="user header" :src="slide.img_url"/>
+                        </div>
+                        <span>{{console.log(slide.level) }}</span>
+                    </template>
+                    <template #content>
+                        
+                           <span class="level-text">level {{slide.level}}</span>
+                        
+                        <div class="sentence">
+                            <span v-for="word in slide.data.split(' ')">
+                                <span class="text-btn" @click="readText(word)">{{ word }}</span>
+                            </span>      
+                        </div>
+                    </template>
+                    <template #footer>
+                        <div class="flex gap-3 mt-1 record-btn">
+                            <Button v-if="isRecording" class="mic-btn-stop" @click="stopToSpeak"><font-awesome-icon icon="fa-solid fa-microphone" /></Button> 
+                            <Button v-if="!isRecording" class="mic-btn-start" @click="clickToSpeak"><font-awesome-icon icon="fa-solid fa-microphone" /></Button>
+                        </div>
+                    </template>
     </Card>
     
    </div>
