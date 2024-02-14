@@ -5,15 +5,15 @@
         <div class="form-top">
         <!-- <img class="penguin" src="../assets/penguin.png"/> -->
         <div class="main-wrapper">
-    <div class="monkey-thought">
+    <div class="penguin-thought">
       <div class="buble-1"></div>
-      <div class="monkey-comment">
+      <div class="penguin-comment">
         <p>is it a email?</p>
       </div>
     </div>
     <div class="img-wrapper">
-      <div class="monkey-face">
-        <img src="../assets/penguin_noEyes.png" alt="face">
+      <div class="penguin-face">
+        <img class="penguin-img" src="../assets/penguin_noEyes.png" alt="face">
         <div class="eyes-wrapper">
           <div class="eyes">
             <div class="eye-brow"></div>
@@ -25,7 +25,7 @@
           </div>
         </div>
       </div>
-      <img class="monkey-hand" src="../assets/penguin_arms.png" alt="hand">
+      <img class="penguin-hand" src="../assets/penguin_arms.png" alt="hand">
     </div>
   </div>
         </div>
@@ -36,10 +36,10 @@
         </div>
         <div class="password">
             <label for="password" class="password-label">Password</label>
-            <input id="password" v-model="password" type="password" placeholder="Password" class="password-input" onfocus="showMonkeyHand()">
+            <input id="password" v-model="password" type="password" placeholder="Password" class="password-input" onfocus="showpenguinHand()">
         </div>
 
-        <button @click="logUserIn" class="">LOGIN</button>
+        <button @click="logUserIn" class="login-btn">LOGIN</button>
     </form>
     </div>
 </template>
@@ -70,35 +70,35 @@ const logUserIn = async () => {
     }
 }
 
-// const monkeyFace = document.querySelector('.monkey-face');
-// const monkeyHand = document.querySelector('.monkey-hand');
+// const penguinFace = document.querySelector('.penguin-face');
+// const penguinHand = document.querySelector('.penguin-hand');
 // const email = document.getElementById('email');
-// const monkeyThought = document.querySelector('.monkey-thought');
-// const monkeyEyesBrows = document.querySelectorAll('.eye-brow')
+// const penguinThought = document.querySelector('.penguin-thought');
+// const penguinEyesBrows = document.querySelectorAll('.eye-brow')
 
 // const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
 // let degree = 13
 // let inputPrevLenght = [];
 
-// const showMonkeyHand = () =>{
-//   monkeyHand.style.transform='translateY(35%)'
+// const showpenguinHand = () =>{
+//   penguinHand.style.transform='translateY(35%)'
 // }
 
 // document.addEventListener('click',(e)=>{
 //   if(e.target.type!=='password'){
-//     monkeyHand.style.transform='translateY(120%)'
+//     penguinHand.style.transform='translateY(120%)'
 //   }
 //   if(e.target.type!=='email'){
-//    monkeyFace.style.transform = `perspective(800px) rotateZ(0deg)`;
-//    monkeyEyesBrows.forEach((eyeBrow)=>{
+//    penguinFace.style.transform = `perspective(800px) rotateZ(0deg)`;
+//    penguinEyesBrows.forEach((eyeBrow)=>{
 //     eyeBrow.style.transform = 'translateY(-2px)'
 //   })
 //   }
   
 // });
 
-// // move monkey face
+// // move penguin face
 // email.addEventListener('input',(e)=>{
 //   let currentInputLength = String(e.target.value).length;
 //   let decrementInInputValue = inputPrevLenght.includes(currentInputLength);
@@ -110,25 +110,33 @@ const logUserIn = async () => {
 //     degree+=1
 //   }
 //   if(!email.value.match(mailformat)){
-//     monkeyThought.style.opacity='1';
-//       monkeyEyesBrows.forEach((eyeBrow)=>{
+//     penguinThought.style.opacity='1';
+//       penguinEyesBrows.forEach((eyeBrow)=>{
 //         eyeBrow.style.transform = 'translateY(3px)'
 //       })
 //   };
 //   if(email.value.match(mailformat)){
-//     monkeyThought.style.opacity='0';
-//     monkeyEyesBrows.forEach((eyeBrow)=>{
+//     penguinThought.style.opacity='0';
+//     penguinEyesBrows.forEach((eyeBrow)=>{
 //       eyeBrow.style.transform = 'translateY(-3px)'
 //     })
 //   };
-//   monkeyFace.style.transform = `perspective(800px) rotateZ(${degree}deg)`
+//   penguinFace.style.transform = `perspective(800px) rotateZ(${degree}deg)`
 // });
 </script>
 
 <style>
 
+.penguin-img {
+    width: 150px;
+    border-radius: 50%;
+    text-align: center;
+    display: block;
+}
+
 .form-top {
-    height: 300px;
+    height: 250px;
+    
 }
     .login-form {
         width: 400px;
@@ -145,12 +153,10 @@ const logUserIn = async () => {
     }
 
     .username, .password {
-        margin: 30px;
+        margin: 10px;
         display: flex;
         flex-direction: column;
         text-align: left;
-       
-    
     }
 
     .username-label, .password-label {
@@ -161,31 +167,33 @@ const logUserIn = async () => {
         height: 40px;
         border-radius: 10px;
         border: none;
-        padding: 10px;
+        padding: 5px;
     }
     
-    body{
+    /* body{
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: space-around;
   background-color: aliceblue;
-}
+} */
 
 .main-wrapper{
-  width: 250px;
+  width: 150px;
+ 
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
-  background-color: rgba(255, 255, 255, 0.356);
-  box-shadow: 0px 0px 30px 0px rgba(82, 82, 82, 0.247);
+  /* background-color: rgba(255, 255, 255, 0.356);
+  box-shadow: 0px 0px 30px 0px rgba(82, 82, 82, 0.247); */
   padding: 2rem;
   gap: 3rem;
   border-radius: .4rem;
   position: relative;
+  margin: auto;
 }
-.monkey-thought{
+.penguin-thought{
   opacity: 0;
   position: absolute;
   top: -2rem;
@@ -194,7 +202,7 @@ const logUserIn = async () => {
   display: flex;
   flex-direction: column;
   transition: opacity .2s ease-in-out;
-}
+} 
 .buble-1{
   height: 2rem;
   width: 2rem;
@@ -202,7 +210,7 @@ const logUserIn = async () => {
   background-color: hsl(167, 92%, 23%);
   position: relative;
 }
-.monkey-comment{
+.penguin-comment{
   position: relative;
   width: 6rem;
   height: 6rem;
@@ -227,7 +235,7 @@ const logUserIn = async () => {
   height: 250px;
   border-radius: 50%;
 }
-.monkey-face{
+.penguin-face{
   transition: transform .3s;
   position: relative;
 }
@@ -246,6 +254,8 @@ const logUserIn = async () => {
   justify-content: space-between;
   flex-direction: column;
   gap: .2rem;
+  position: relative;
+  transform: translateY(-35px);
 }
 .eye-brow{
   border-radius: 50%;
@@ -253,7 +263,7 @@ const logUserIn = async () => {
   border-top-right-radius: 3rem;
   height: 0.4rem;
   position: relative;
-  transform: translateY(-70px);
+  transform: translateY(-40px);
   width: 100%;
   background-color: black;
   transition: transform .1s ease-in;
@@ -263,8 +273,9 @@ const logUserIn = async () => {
   height: 1.5rem;
   background-color: black;
   border-radius: 50%;
+
 }
-.img-wrapper .monkey-hand{
+.img-wrapper .penguin-hand{
   position: absolute;
   transform: translateY(130%);
   transition: .7s;
@@ -276,6 +287,7 @@ const logUserIn = async () => {
   animation-iteration-count: infinite;
   animation-direction: linear;
   transform-origin: center;
+
 }
 form{
   display: flex;
@@ -300,10 +312,10 @@ input:focus{
   outline: none;
 }
 
-button{
+.login-btn{
   font-size: 1.3rem;
   padding: 0.4rem 2rem;
-  background-color: hsl(167, 92%, 23%);
+  background-color: #FFD43B;
   border: none;
   border-radius: .4rem;
   color: white;
@@ -326,14 +338,14 @@ button{
   }
 }
 
-@media screen and (max-width:450px) {
+/* @media screen and (max-width:450px) {
   .main-wrapper{
     width: 300px;
   }
-  .monkey-face{
+  .penguin-face{
     width: 8rem;
   }
-  .monkey-face img{
+  .penguin-face img{
     width: 100%;
   }
   .eyes-wrapper{
@@ -345,23 +357,23 @@ button{
   .eye-brow{
     top: 0rem;
   }
-  .monkey-hand{
+  .penguin-hand{
     width: 5.2rem;
   }
   input{
     width: 14rem;
   }
-  .monkey-thought{
+  .penguin-thought{
     right: 2.3rem;
   }
   .buble-1{
     width: .7rem;
     height: .7rem;
   }
-  .monkey-comment{
+  .penguin-comment{
     font-size: 1.3rem;
     width: 5rem;
     height: 5rem;
   }
-}
+} */
 </style>

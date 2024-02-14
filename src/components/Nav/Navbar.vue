@@ -1,12 +1,12 @@
 <script setup>
 import './Navbar.css'
-import Dialog from 'primevue/dialog';
+// import Dialog from 'primevue/dialog';
 import { useAuth } from '../../composables/useAuth'
+import ProfileModal from '../ProfileModal.vue';
 const { isAuthenticated, logout, user } = useAuth()
 
 import { ref } from "vue";
 
-const visible = ref(false);
 </script>
 
 <template>
@@ -17,15 +17,12 @@ const visible = ref(false);
             <button class="writing button"><RouterLink to="/write"><font-awesome-icon icon="fa-solid fa-pen" size="xl" style="color: #B197FC;" /> Writing</RouterLink></button>
             <button class="math button"><RouterLink to="/math"><font-awesome-icon icon="fa-solid fa-square-root-variable" size="xl" style="color: #ff8ae9;" /> Math</RouterLink></button>
          </div>
-         <div class="setting-icon-container"> <RouterLink to="/settings"><font-awesome-icon class="setting-icon" icon="fa-solid fa-gear" size="2xl" style="color: #B197FC;" /></RouterLink></div>
          <div v-if="isAuthenticated">
-            Welcome {{ user.email }}
-            <button @click="logout" class="logout-btn">Logout</button>
+         <ProfileModal/>
          </div>
          <div v-else>
             <RouterLink to="/loginPage">Login</RouterLink>
          </div>
-         
          
       </nav>
    

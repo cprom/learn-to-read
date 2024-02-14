@@ -8,7 +8,14 @@
     
 
 }
-
+.logout-btn {
+  font-size: 15px;
+  width:100px;
+  height: 50px;
+  margin: auto;
+  padding: 0;
+  color: #7d2ae8;
+}
 button{
     display: inline;
     padding: 30px;
