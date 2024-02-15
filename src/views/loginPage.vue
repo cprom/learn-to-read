@@ -18,10 +18,11 @@
           <div class="eyes">
             <div class="eye-brow"></div>
             <div class="eye-ball"></div>
-          </div>
-          <div class="eyes">
+        </div>
+        <div class="eyes">
             <div class="eye-brow"></div>
             <div class="eye-ball"></div>
+            
           </div>
         </div>
       </div>
@@ -36,7 +37,7 @@
         </div>
         <div class="password">
             <label for="password" class="password-label">Password</label>
-            <input id="password" v-model="password" type="password" placeholder="Password" class="password-input" onfocus="showpenguinHand()">
+            <input id="password" v-model="password" type="password" placeholder="Password" class="password-input" @input="handleInput" onfocus="showpenguinHand()">
         </div>
 
         <button @click="logUserIn" class="login-btn">LOGIN</button>
@@ -70,59 +71,16 @@ const logUserIn = async () => {
     }
 }
 
-// const penguinFace = document.querySelector('.penguin-face');
-// const penguinHand = document.querySelector('.penguin-hand');
-// const email = document.getElementById('email');
-// const penguinThought = document.querySelector('.penguin-thought');
-// const penguinEyesBrows = document.querySelectorAll('.eye-brow')
+const handleInput = (event) => {
+    if(event.target.value !== ''){
+        document.querySelector('.penguin-hand').style.transform ='translateY(-1px)'
+        console.log(event.target.value)
+    }
+    else{
+        document.querySelector('.penguin-hand').style.transform ='translateY(110px)'
+    }
+}
 
-// const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-
-// let degree = 13
-// let inputPrevLenght = [];
-
-// const showpenguinHand = () =>{
-//   penguinHand.style.transform='translateY(35%)'
-// }
-
-// document.addEventListener('click',(e)=>{
-//   if(e.target.type!=='password'){
-//     penguinHand.style.transform='translateY(120%)'
-//   }
-//   if(e.target.type!=='email'){
-//    penguinFace.style.transform = `perspective(800px) rotateZ(0deg)`;
-//    penguinEyesBrows.forEach((eyeBrow)=>{
-//     eyeBrow.style.transform = 'translateY(-2px)'
-//   })
-//   }
-  
-// });
-
-// // move penguin face
-// email.addEventListener('input',(e)=>{
-//   let currentInputLength = String(e.target.value).length;
-//   let decrementInInputValue = inputPrevLenght.includes(currentInputLength);
-//   if(!decrementInInputValue && degree>= -10){
-//     degree-=1
-//     inputPrevLenght.push(currentInputLength)
-//   }
-//   if(decrementInInputValue && degree<13){
-//     degree+=1
-//   }
-//   if(!email.value.match(mailformat)){
-//     penguinThought.style.opacity='1';
-//       penguinEyesBrows.forEach((eyeBrow)=>{
-//         eyeBrow.style.transform = 'translateY(3px)'
-//       })
-//   };
-//   if(email.value.match(mailformat)){
-//     penguinThought.style.opacity='0';
-//     penguinEyesBrows.forEach((eyeBrow)=>{
-//       eyeBrow.style.transform = 'translateY(-3px)'
-//     })
-//   };
-//   penguinFace.style.transform = `perspective(800px) rotateZ(${degree}deg)`
-// });
 </script>
 
 <style>
@@ -231,13 +189,14 @@ const logUserIn = async () => {
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  width: 250px;
-  height: 250px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
 }
 .penguin-face{
   transition: transform .3s;
   position: relative;
+ 
 }
 .eyes-wrapper{
   display: flex;
@@ -274,11 +233,17 @@ const logUserIn = async () => {
   background-color: black;
   border-radius: 50%;
 
+
 }
 .img-wrapper .penguin-hand{
   position: absolute;
   transform: translateY(130%);
   transition: .7s;
+}
+
+.penguin-hand {
+    width: 150px;
+    height: 200px;
 }
 
 .eye-ball{
