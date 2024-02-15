@@ -30,14 +30,14 @@
     </div>
   </div>
         </div>
-        <form action="" class="" @submit.prevent>
+        <form action="" @submit.prevent class="form-input">
         <div class="username">
             <label for="username" class="username-label">Username</label>
             <input id="email" v-model="username" type="email" placeholder="username" class="username-input">
         </div>
         <div class="password">
             <label for="password" class="password-label">Password</label>
-            <input id="password" v-model="password" type="password" placeholder="Password" class="password-input" @input="handleInput" onfocus="showpenguinHand()">
+            <input id="password" v-model="password" type="password" placeholder="Password" class="password-input" @input="handleInput" >
         </div>
 
         <button @click="logUserIn" class="login-btn">LOGIN</button>
@@ -84,12 +84,19 @@ const handleInput = (event) => {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
 
 .penguin-img {
     width: 150px;
     border-radius: 50%;
     text-align: center;
     display: block;
+}
+
+.form-input {
+    font-family: 'Architects Daughter';
+    gap: 0px;
+    font-size: 25px;
 }
 
 .form-top {
@@ -111,7 +118,6 @@ const handleInput = (event) => {
     }
 
     .username, .password {
-        margin: 10px;
         display: flex;
         flex-direction: column;
         text-align: left;
@@ -122,10 +128,11 @@ const handleInput = (event) => {
     }
 
     .username-input, .password-input {
-        height: 40px;
+        height: 50px;
         border-radius: 10px;
         border: none;
         padding: 5px;
+        font-family: 'Architects Daughter';
     }
     
     /* body{
@@ -285,6 +292,7 @@ input:focus{
   border-radius: .4rem;
   color: white;
   cursor: pointer;
+  width: 270px;
 }
 
 

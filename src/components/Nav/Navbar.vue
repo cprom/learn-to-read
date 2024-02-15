@@ -20,9 +20,9 @@ import { ref } from "vue";
          <div v-if="isAuthenticated">
          <ProfileModal/>
          </div>
-         <div v-else>
+         <!-- <div v-else>
             <RouterLink to="/loginPage">Login</RouterLink>
-         </div>
+         </div> -->
          
       </nav>
    
