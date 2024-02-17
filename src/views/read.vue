@@ -7,7 +7,7 @@ import Button from 'primevue/button';
 import '../assets/read.css'
 import { useAuth } from '../composables/useAuth'
 const { isAuthenticated, logout, user } = useAuth()
-
+ 
 
 console.log(isAuthenticated.value)
 const strToRead = "test doll"
