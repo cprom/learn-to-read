@@ -10,7 +10,7 @@ import { ref } from "vue";
 </script>
 
 <template>
-   <nav class="nav-container">
+   <nav class="nav-container" v-if="isAuthenticated">
         <RouterLink class="home-icon" to="/"><font-awesome-icon class="brain-icon" icon="fa-solid fa-brain" size="2xl" style="color: #FFD43B ;" /><font-awesome-icon class="lightbulb-icon" icon="fa-solid fa-lightbulb" size="2xl" style="color: #63E6BE;" /></RouterLink>
          <div class="nav-btns">
             <button class="reading button"><RouterLink to="/read"><font-awesome-icon icon="fa-solid fa-book" size="xl" style="color: #63E6BE;" /> Reading</RouterLink></button>

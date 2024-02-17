@@ -5,8 +5,11 @@ import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 import Card from 'primevue/card';
 import Button from 'primevue/button';
 import '../assets/read.css'
+import { useAuth } from '../composables/useAuth'
+const { isAuthenticated, logout, user } = useAuth()
 
 
+console.log(isAuthenticated.value)
 const strToRead = "test doll"
 
  const strToReadObj = [

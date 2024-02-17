@@ -1,5 +1,6 @@
 <template>
-   
+   <br>
+   <br>
     <div class="login-form">
         <br>
         <div class="form-top">
@@ -51,7 +52,9 @@ import { useRoute, useRouter } from 'vue-router'
 
 import { useAuth } from '../composables/useAuth'
 
-const { login, logout } = useAuth()
+const { login, logout, isAuthenticated } = useAuth()
+console.log(isAuthenticated._value)
+console.log(isAuthenticated)
 
 const router = useRouter()
 const route = useRoute()
@@ -62,7 +65,7 @@ const password = ref('')
 const logUserIn = async () => {
     if (await login(username.value, password.value)) {
         if (route.query.redirect) {
-            router.push(route.query.redirect)
+            router.push({name: 'home'})
         }else {
             router.push({name: 'home'})
         }
