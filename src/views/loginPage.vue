@@ -42,7 +42,7 @@
 <script setup>
 import { ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import '../assets/loginPage.css'
+import './loginPage.css'
 import { useAuth } from '../composables/useAuth'
 
 
