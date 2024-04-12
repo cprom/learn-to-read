@@ -7,7 +7,7 @@ import write from './views/write.vue'
 import loginPage from './views/loginPage.vue'
 import settings from './views/settings.vue'
 
-import { firebaseApp } from './composables/useFirebase'
+import  firebaseApp  from './composables/useFirebase'
 import { getAuth, signInWithEmailAndPassword, signOut } from 'firebase/auth'
 import { useAuth as firebaseAuth } from '@vueuse/firebase/useAuth'
 
