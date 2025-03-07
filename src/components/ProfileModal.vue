@@ -29,7 +29,6 @@ const openPosition = (pos) => {
 }
 
 
-console.log(isAuthenticated)
 </script>
 
 <style>

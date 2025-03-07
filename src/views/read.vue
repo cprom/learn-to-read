@@ -1,12 +1,16 @@
 <script setup>
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import 'vue3-carousel/dist/carousel.css'
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 import Card from 'primevue/card';
 import Button from 'primevue/button';
 import '../assets/read.css'
 import { useAuth } from '../composables/useAuth'
+import firebaseApp from '../composables/useFirebase'
+import 'firebase/firestore'
 const { isAuthenticated, logout, user } = useAuth()
+const db = firebaseApp.firestore();
+
  
 
 console.log(isAuthenticated.value)
@@ -106,6 +110,30 @@ window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecogn
         let utterance = new SpeechSynthesisUtterance(word);
         speechSynthesis.speak(utterance);
     }
+
+    // fetch
+    const getReadingData = () => {
+        let readingData = []
+        db.collection("reading")
+        .get()
+        .then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                readingData.push({
+                    id: doc.id,
+                    category: doc.data().category,
+                    data: doc.data().data,
+                    img_url: doc.data().img_url,
+                    level: doc.data().level
+                })
+                return readingData
+            })
+            .catch((error) => {
+                console.log("Error getting reading documents: ", error)
+            })
+        })
+    }
+
+    
 
 </script>
 
